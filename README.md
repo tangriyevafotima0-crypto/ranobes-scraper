@@ -1,11 +1,18 @@
-# Ranobes Scraper — High-Throughput Novel Scraping Engine
+# Ranobes Scraper — Web Novel Scraping Engine & Desktop Suite
 
-A specialized web scraper and content extraction pipeline tailored for serialized novels and long-form fiction, featuring automated DOM traversal, anti-bot handling, and structured content sanitization.
+A high-performance web novel scraping and content parsing suite equipped with anti-bot bypass mechanisms, DOM normalization, and dual interaction modes: a high-throughput CLI engine and an interactive Desktop GUI.
 
-## Architecture & Workflow
-- **Target Extraction:** Fetches paginated chapter trees and full novel metadata from target fiction repositories.
-- **Content Normalization:** Strips residual advertisements, watermarks, and broken HTML tags to ensure clean input for downstream NLP/TTS models.
-- **Data Serialization:** Exports cleaned chapters into structured formats ready for neural narration processing pipelines.
+## System Architecture
+
+### 1. High-Throughput Engine (`/`)
+- **`ranobes_scraper_v8.py`**: Asynchronous/multithreaded core pipeline handling chapter pagination, DOM sanitization, and structured serialization.
+- **`cf_proxy.py`**: Anti-detection proxy layer bypassing Cloudflare protection and rate limits.
+- **`run.bat` / `run_proxy.bat`**: Automated runtime launch scripts for background proxy routing.
+
+### 2. Desktop GUI Application (`gui/`)
+- **`ranobes_gui.py`**: Graphical user interface enabling single-click novel scraping, progress visualizers, and batch exports.
+- **`ranobes_gui.spec`**: PyInstaller standalone executable bundling specification for zero-dependency Windows distribution.
+- **`build_exe.bat`**: Automated one-click packaging pipeline compiling the GUI into a standalone Windows binary.
 
 ## License
 MIT License
